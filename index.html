@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toufiquzzaman — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#0f1724; /* dark navy */
+            --card:#0b1220;
+            --muted:#9aa4b2;
+            --accent:#06b6d4; /* teal */
+            --glass: rgba(255,255,255,0.03);
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+            color:#e6eef6;
+            background: linear-gradient(180deg,#07122a 0%, #071b2d 100%);
+            -webkit-font-smoothing:antialiased;
+        }
+        header.site-header{
+            background:linear-gradient(90deg, rgba(6,182,212,0.08), rgba(99,102,241,0.06));
+            padding:1rem 2rem;
+            backdrop-filter: blur(6px);
+            position:sticky;top:0;z-index:30;
+            border-bottom:1px solid rgba(255,255,255,0.03);
+        }
+        .nav{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+        }
+        .brand{display:flex;gap:.75rem;align-items:center}
+        .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6366f1);display:inline-block}
+        .brand h1{font-size:1rem;margin:0;font-weight:700}
+        nav a{color:var(--muted);text-decoration:none;margin-left:1.25rem;font-weight:500}
+        .hero{
+            max-width:1200px;margin:2.25rem auto;padding:2rem;display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:center;
+        }
+        .hero-card{
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            padding:2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+        }
+        .hero h2{margin:0 0 .5rem;font-size:2rem}
+        .hero p{color:var(--muted);margin:0 0 1rem}
+        .cta{display:inline-block;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#042028;font-weight:600;text-decoration:none}
+        .profile{
+            background:var(--card);border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;align-items:center;gap:1rem;border:1px solid rgba(255,255,255,0.03)
+        }
+        .avatar{width:160px;height:160px;border-radius:12px;background:linear-gradient(135deg,#1e293b,#0ea5a4)}
+        .meta{color:var(--muted);text-align:center}
+
+        .container{max-width:1200px;margin:2rem auto;padding:0 1rem}
+        .section{margin-bottom:2.25rem}
+        .section h3{margin:0 0 .75rem}
+        .skills{display:flex;flex-wrap:wrap;gap:1rem}
+        .skill{flex:1 1 220px;background:var(--glass);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+        .skill .label{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
+        .bar{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden}
+        .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#6366f1)}
+
+        .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+        .project{background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .project .thumb{height:140px;border-radius:8px;background:linear-gradient(135deg,#0ea5a4,#6366f1);margin-bottom:.75rem}
+        .project h4{margin:.25rem 0}
+        .project p{color:var(--muted);font-size:.95rem}
+
+        form.contact{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        form.contact textarea{grid-column:1/-1;min-height:120px;padding:.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+        input,textarea{font-family:inherit}
+        .btn{display:inline-block;padding:.6rem .9rem;border-radius:8px;background:#111827;color:#fff;text-decoration:none;border:none;cursor:pointer}
+
+        footer{max-width:1200px;margin:2rem auto 3rem;padding:1rem;color:var(--muted);text-align:center}
+
+        /* responsiveness */
+        @media (max-width:960px){
+            .hero{grid-template-columns:1fr 300px}
+            .projects{grid-template-columns:repeat(2,1fr)}
+        }
+        @media (max-width:700px){
+            nav a{display:none}
+            .hero{grid-template-columns:1fr}
+            .profile{flex-direction:row;align-items:center}
+            .projects{grid-template-columns:1fr}
+            form.contact{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav">
+            <div class="brand">
+                <span class="logo" aria-hidden></span>
+                <div>
+                    <h1 style="margin:0">Toufiquzzaman</h1>
+                    <div style="font-size:.8rem;color:var(--muted)">Web Developer & Designer</div>
+                </div>
+            </div>
+            <nav aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-card">
+                <h2>Hello — I'm Toufiquzzaman</h2>
+                <p>I build modern, responsive websites and web apps. I focus on clean UI, great UX and accessible code.</p>
+                <p style="margin-top:1rem"><a class="cta" href="#projects">View Projects</a></p>
+                <div style="margin-top:1.25rem;color:var(--muted);font-size:.95rem">
+                    <strong>Location:</strong> Remote · <strong>Availability:</strong> Open to work
+                </div>
+            </div>
+
+            <aside class="profile">
+                <div class="avatar" aria-hidden></div>
+                <div class="meta">
+                    <strong>Toufiquzzaman</strong>
+                    <div style="color:var(--muted);font-size:.95rem">Web Developer • HTML • CSS • JavaScript</div>
+                    <div style="margin-top:.75rem"><a href="#contact" class="btn">Get in touch</a></div>
+                </div>
+            </aside>
+        </section>
+
+        <div class="container">
+            <section id="about" class="section">
+                <h3>About Me</h3>
+                <p style="color:var(--muted);max-width:70ch">I craft accessible and performant websites. I enjoy turning ideas into beautiful, usable interfaces and bringing clarity to complex problems. My stack: HTML, modern CSS (Flexbox & Grid), JavaScript, and small frameworks when needed.</p>
+            </section>
+
+            <section id="skills" class="section">
+                <h3>Skills</h3>
+                <div class="skills">
+                    <div class="skill">
+                        <div class="label"><span>HTML & Accessibility</span><span>95%</span></div>
+                        <div class="bar"><span style="width:95%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div class="label"><span>CSS & Responsive</span><span>90%</span></div>
+                        <div class="bar"><span style="width:90%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div class="label"><span>JavaScript</span><span>85%</span></div>
+                        <div class="bar"><span style="width:85%"></span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h3>Selected Projects</h3>
+                <div class="projects">
+                    <article class="project">
+                        <div class="thumb"></div>
+                        <h4>Project One</h4>
+                        <p>Responsive marketing site with interactive animations and performance optimizations.</p>
+                    </article>
+                    <article class="project">
+                        <div class="thumb"></div>
+                        <h4>Project Two</h4>
+                        <p>Single-page app with client-side routing and modular components.</p>
+                    </article>
+                    <article class="project">
+                        <div class="thumb"></div>
+                        <h4>Project Three</h4>
+                        <p>Accessible dashboard and data visualizations using lightweight libraries.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <h3>Contact</h3>
+                <p style="color:var(--muted)">Prefer email? <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <form class="contact" id="contactForm">
+                    <input type="text" name="name" placeholder="Your name" required style="padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+                    <input type="email" name="email" placeholder="Your email" required style="padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:center">
+                        <div style="color:var(--muted);font-size:.9rem">Or find me on <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:var(--accent)">LinkedIn</a> · <a href="https://github.com" target="_blank" rel="noopener" style="color:var(--accent)">GitHub</a></div>
+                        <button class="btn" type="submit">Send message</button>
+                    </div>
+                </form>
+                <div id="formMsg" style="margin-top:.75rem;color:var(--muted);display:none"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        © <span id="year"></span> Toufiquzzaman • Built with care
+    </footer>
+
+    <script>
+        // small enhancements
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            // lightweight client-side success message (no server)
+            var msg = document.getElementById('formMsg');
+            msg.style.display = 'block';
+            msg.textContent = 'Thanks — your message was captured locally. Replace this handler to post to your server or email service.';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
